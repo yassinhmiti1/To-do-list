@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Stack+Sans+Text:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Text:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, Montserrat;
+}
+h1{
+  font-size: 2.5em;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+}
+
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+
+button{
+  padding: 7px 20px;
+  border: none;
+  border-radius: 5px;
+}
+.btn-add{
+  background-color: #cc5de8;
+  color: ghostwhite;
+}
+dialog{
+  justify-self: center;
+  align-self: center;
+  padding: 20px;
+  border-radius: 5px;
+  gap: 10px;
+  border: none;
+}
+
+dialog .title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#btn-close{
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+table{
+  gap: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+td{
+  display: flex;
+  flex-direction: columb;
+}
+td input{
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  outline: none;
+}
+
+input:focus{
+  border: 2px solid #cc5de8;
+}
+
+td .buttons{
+  display: flex;
+  gap: 10px;
+  align-items: left;
+}
+
+.container {
+  display: grid;
+  grid-template-areas: "box";
+  grid-template-columns: 300px 1fr;
+}
+
+.box-vid{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 5px;
+  grid-area: box;
+}
+
+.disabled{
+  background-color: #c1c1c1;
+  color: #adadad;
+}

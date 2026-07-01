@@ -1,0 +1,31 @@
+<!Doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>To do list</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>To Do List</h1>
+        <button id="btn-add" class="btn-add">Ajouter</button>
+      </header>
+      <dialog id="dialog-add">
+        <div class="title">
+          <h3>Ajouter</h3>
+          <button id="btn-close">X</button>
+        </div>
+        <table>
+          <tr><td><label>Title:</label></td><td><input type="text" id="i1"></td></tr>
+          <tr><td><label>Description:</label></td><td><input type="text" id="i2"></td></tr>
+          <tr><td><div class="buttons"><button>close</button><button class="btn-add" id="add-btn">Ajouter</button></div></td></tr>
+        </table>
+      </dialog>
+      <div class="container" id="container">
+        
+      </div>
+    </main>
+  </body>
+</html>
