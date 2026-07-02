@@ -222,10 +222,12 @@ td .buttons{
 #btn-no{
   background-color: #2d8add;
   color: ghostwhite;
+  cursor: pointer;
 }
 #btn-yes{
   background-color: #dd2d2d;
   color: ghostwhite;
+  cursor: pointer;
 }
 #btn-message{
   display: flex;

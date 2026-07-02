@@ -17,10 +17,15 @@ const yesb = document.getElementById("btn-yes");
 var itosp = 0;
 
 const timediv = document.getElementById("time");
-var date = new Date();
+setInterval(() => {
+  var date = new Date();
+  timediv.innerHTML = `${getDayName(date)} ${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()} / ${date.getHours()}:${date.getMinutes()}`;
+}, 1000);
 
-function getDayName() {
-  const day = date.getDay();
+
+
+function getDayName(d) {
+  const day = d.getDay();
   let dayn = "";
   switch (day) {
     case 0:
@@ -48,7 +53,7 @@ function getDayName() {
 
   return dayn;
 }
-timediv.innerHTML = `${getDayName()} ${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()} / ${date.getHours()}:${date.getMinutes()}`;
+
 
 function loadList() {
   const savedList = localStorage.getItem("todolist");
