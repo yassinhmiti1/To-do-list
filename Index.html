@@ -1,31 +1,83 @@
-<!Doctype html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>To do list</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <main>
-      <header>
-        <h1>To Do List</h1>
-        <button id="btn-add" class="btn-add">Ajouter</button>
-      </header>
-      <dialog id="dialog-add">
-        <div class="title">
-          <h3>Ajouter</h3>
-          <button id="btn-close">X</button>
-        </div>
-        <table>
-          <tr><td><label>Title:</label></td><td><input type="text" id="i1"></td></tr>
-          <tr><td><label>Description:</label></td><td><input type="text" id="i2"></td></tr>
-          <tr><td><div class="buttons"><button>close</button><button class="btn-add" id="add-btn">Ajouter</button></div></td></tr>
-        </table>
-      </dialog>
-      <div class="container" id="container">
-        
-      </div>
-    </main>
-  </body>
+    <head>
+        <meta charset="utf-8" />
+        <title>To do list</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1>To Do List</h1>
+                <button id="btn-add" class="btn-add">Add</button>
+            </header>
+            <dialog id="dialog-add">
+                <div class="title">
+                    <h3>Add</h3>
+                    <button id="btn-close">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="24px"
+                            viewBox="0 -960 960 960"
+                            width="24px"
+                            fill="#e3e3e3"
+                        >
+                            <path
+                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                            />
+                        </svg>
+                    </button>
+                </div>
+                <table>
+                    <tr>
+                        <td><label>Title:</label></td>
+                        <td><input type="text" id="i1" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>Description:</label></td>
+                        <td><textarea id="i2"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="buttons">
+                                <button id="sec-close-btn">close</button
+                                ><button class="btn-add" id="add-btn">
+                                    Add
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </dialog>
+            <dialog id="del-dialog">
+                <div class="con-supp">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="100px"
+                        viewBox="0 -960 960 960"
+                        width="100px"
+                        fill="#e3e3e3"
+                    >
+                        <path
+                            d="m40-120 440-760 440 760H40Zm138-80h604L480-720 178-200Zm330.5-51.5Q520-263 520-280t-11.5-28.5Q497-320 480-320t-28.5 11.5Q440-297 440-280t11.5 28.5Q463-240 480-240t28.5-11.5ZM440-360h80v-200h-80v200Zm40-100Z"
+                        />
+                    </svg>
+                    <h3>Delete</h3>
+                    <p>Are you sure?</p>
+                    <div class="buttonsd">
+                        <button id="btn-no">No, Keep it</button
+                        ><button id="btn-yes">Yes, Delete!</button>
+                    </div>
+                </div>
+            </dialog>
+          <dialog id="message-dialog" class="message-dialog">
+            <p id="message"></p>
+            <br>
+            <button id="btn-message">Ok</button>
+          </dialog>
+            <div id="time" class="time"></div>
+            <div class="container" id="container"></div>
+        </main>
+    </body>
 </html>
