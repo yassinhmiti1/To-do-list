@@ -19,7 +19,7 @@ var itosp = 0;
 const timediv = document.getElementById("time");
 setInterval(() => {
   var date = new Date();
-  timediv.innerHTML = `${getDayName(date)} ${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()} / ${date.getHours()}:${date.getMinutes()}`;
+  timediv.innerHTML = `${getDayName(date)} ${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} - ${String(date.getHours()).padStart(2,'0')}:${String(date.getMinutes()).padStart(2,'0')}`;
 }, 1000);
 
 
@@ -82,7 +82,7 @@ function RenderTodos() {
 
   if (boxs.length === 0) {
     container.innerHTML = `
-      <div class='box-vid'>
+      <div class='box-vid' style='margin: auto'>
         <h3>No to do list here</h3>
         <p>try to create your first one</p>
         <button id="btn-empty-add">Ajouter</button>
@@ -162,7 +162,7 @@ function Addbox() {
   let val1 = i1.value.trim();
   let val2 = i2.value.trim();
 
-  if (val1 === "" && val2 === "") {
+  if (val1 === "" || val2 === "") {
     messagep.innerHTML= "You must fill in all the inputs!!!"
     messagebox.showModal();
   } else {

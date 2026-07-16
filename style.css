@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Stack+Sans+Text:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Text:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Poppins, Montserrat;
+  font-family: 'Poppins', 'Montserrat', sans-serif;
 }
+
 h1{
   font-size: 2.5em;
 }
@@ -16,6 +16,7 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 20px;
   padding: 10px;
   width: 100%;
 }
@@ -28,16 +29,18 @@ header{
   width: 100%;
 }
 
-
 button{
   padding: 7px 20px;
   border: none;
   border-radius: 5px;
+  cursor: pointer; /* Zidtha bsh tban hand f l-hover */
 }
+
 .btn-add{
   background-color: #cc5de8;
   color: ghostwhite;
 }
+
 dialog{
   justify-self: center;
   align-self: center;
@@ -52,69 +55,73 @@ dialog .title{
   align-items: center;
   justify-content: space-between;
 }
+
 dialog::backdrop {
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(4px);
 }
+
 #btn-close{
   border: none;
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  svg{
-    fill: #1b1b1b
-  }
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+#btn-close svg{
+  fill: #1b1b1b;
+}
+
 .buttons{
   margin-top: 20px;
   display: flex;
-  justify-content: right;
-  align-items: right;
+  justify-content: flex-end;
+  align-items: center;
   width: 100%;
 }
+
 table{
   gap: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
+
 td{
   display: flex;
-  flex-direction: columb;
+  flex-direction: column;
 }
+
 td input{
   padding: 5px 15px;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 5px;
   background-color: #f9f9f9;
   outline: none;
 }
+
 td textarea{
   width: 100%;
   height: 125px;
   padding: 5px 15px;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 5px;
   background-color: #f9f9f9;
   outline: none;
 }
-textarea:focus{
-  border: 2px solid #cc5de8;
-}
 
-input:focus{
+textarea:focus, input:focus{
   border: 2px solid #cc5de8;
 }
 
 td .buttons{
   display: flex;
   gap: 10px;
-  align-items: left;
+  justify-content: flex-end;
 }
 
 .container {
@@ -122,21 +129,25 @@ td .buttons{
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
   width: 100%;
-  margin-top: 50px;
 }
 
 .box-vid{
   display: flex;
   flex-direction: column;
+  justify-self: center;
+  align-self: center;
+  margin-top: 200px;
   margin: auto;
   justify-content: center;
   align-items: center;
   gap: 15px;
   font-size: 1.7em;
 }
+
 .box-vid h3{
   color: #3d3a3e;
 }
+
 .box-vid p{
   color: #6b686c;
 }
@@ -147,34 +158,59 @@ td .buttons{
   justify-content: space-between;
   padding: 20px;
   border-radius: 5px;
-  text-wrap: none;
+  white-space: nowrap; /* Rej3at blast 'text-wrap: none' li makaynash */
   gap: 20px;
+  animation: fadeIn 0.5s ease 0.3s forwards; /* Sa77a7t '0.3' l '0.3s' dyal l-w9t */
+  opacity: 0;
   transition: all 0.2s ease-in;
-  .supp-btn{
-    display: none !important;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 5px;
-    align-items: center;
-    justify-content: center;
-  svg{
-    fill: #f03434;
+}
+
+.box .supp-btn{
+  display: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.box .supp-btn svg{
+  fill: #f03434;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+    transform: scale(0.8);
   }
+  to{
+    opacity: 1;
+    transform: scale(1);
   }
 }
+
 .box:hover{
   transform: scale(1.02);
-  .supp-btn{
-    display: block !important;
-  }
+}
+
+.box:hover .supp-btn{
+  display: flex;
+}
+
+.detail h4, 
+.detail p {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .supp-btn:hover{
   background-color: #f03434;
-    svg{
-      fill: ghostwhite;
-    }
+}
+
+.supp-btn:hover svg{
+  fill: ghostwhite;
 }
 
 .actions{
@@ -185,7 +221,7 @@ td .buttons{
 }
 
 .disabled{
-  background-color: #c1c1c1;
+  background-color: #dcdcdc;
   color: #adadad;
   text-decoration: line-through;
 }
@@ -194,6 +230,7 @@ td .buttons{
   background-color:#cc5de8;
   color: ghostwhite;
 }
+
 .time{
   background-color: #f9f9f9;
   font-weight: bold;
@@ -201,37 +238,44 @@ td .buttons{
   padding: 15px;
   border-radius: 10px;
   display: flex;
-  justify-self: left;
-  align-self: left;
+  justify-self: start;
+  align-self: start;
 }
+
 .con-supp{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  svg{
-    fill: #dd2d2d;
-    width: 100px;
-  }
 }
+
+.con-supp svg{
+  fill: #dd2d2d;
+  width: 100px;
+}
+
 .buttonsd{
   gap: 10px;
   display: flex;
 }
+
 #btn-no{
   background-color: #2d8add;
   color: ghostwhite;
   cursor: pointer;
 }
+
 #btn-yes{
-  background-color: #dd2d2d;
-  color: ghostwhite;
+  background-color: transparent;
+  color: #dd2d2d;
+  border: 1px solid #dd2d2d;
   cursor: pointer;
 }
+
 #btn-message{
   display: flex;
   background-color: #2d8add;
   color: ghostwhite;
-  justify-self: right;
+  justify-self: end;
 }
